@@ -5,13 +5,14 @@ public class Manutentionnaire extends Employe {
     private static final int PREFIX_MANUTENTIONNAIRE = 4000;
     private static final double SALAIRE_HORAIRE = 34.50d;
 
-    private static int nbManutentionnaires;
+    private static int nbManutentionnaires = 0;
 
-    private double heures;
+    private final double heures;
 
     public Manutentionnaire(String nom, String prenom, int anneeEmbauche, double heures) {
         super(nom, prenom, anneeEmbauche);
         this.heures = heures;
+        nbManutentionnaires++;
     }
 
     @Override
@@ -21,6 +22,6 @@ public class Manutentionnaire extends Employe {
 
     @Override
     public double getSalaire() {
-        return 0;
+        return heures * SALAIRE_HORAIRE;
     }
 }

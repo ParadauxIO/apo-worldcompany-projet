@@ -19,7 +19,7 @@ public class Vendeur extends Commercial {
 
     @Override
     public double getSalaire() {
-        return 0;
+        return BONUS_VENDEUR + (getChiffreAffaire() * POURCENT_VENDEUR);
     }
 }
 

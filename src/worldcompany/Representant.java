@@ -2,14 +2,15 @@ package worldcompany;
 
 public class Representant extends Commercial {
 
-    private static final double POURCENT_REPRESENTANT = 0.2;
-    private static final double BONUS_REPRESENTANT = 800d;
-    private static final int PREFIX_REPRESENTANT = 1000;
+    private static final double POURCENT_REPRESENTANT = 0.4;
+    private static final double BONUS_REPRESENTANT = 1000d;
+    private static final int PREFIX_REPRESENTANT = 2000;
 
-    private static int nbRepresentant;
+    private static int nbRepresentant = 0;
 
     public Representant(String nom, String prenom, int anneeEmbauche, double chiffreAffaire) {
         super(nom, prenom, anneeEmbauche, chiffreAffaire);
+        nbRepresentant++;
     }
 
     @Override
@@ -19,7 +20,7 @@ public class Representant extends Commercial {
 
     @Override
     public double getSalaire() {
-        return 0;
+        return BONUS_REPRESENTANT + (getChiffreAffaire() * POURCENT_REPRESENTANT);
     }
 
 }
