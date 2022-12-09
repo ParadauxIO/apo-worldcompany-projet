@@ -31,18 +31,18 @@ public class Personnel {
     }
 
     protected void triSelection(int n) {
-    /* TODO Complétez la méthode triSelection.
--- Utiliser le tri par sélection
---- Algorithme du tri par sélection (source: Wikipedia)
- procédure tri_selection(tableau t, entier n)
- 		pour i de 0 à n - 2
- 			min ← i
- 			pour j de i + 1 à n - 1
-  				si t[j] < t[min], alors min ← j
-			fin pour
- 			si min ≠ i, alors échanger t[i] et t[min]
- 		fin pour
- fin procédure
-*/
+        for (int i = 0; i < n - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < n; j++) {
+                if (rh[j].compareTo(rh[min]) < 0) {
+                    min = j;
+                }
+            }
+            if (min != i) {
+                Employe temp = rh[i];
+                rh[i] = rh[min];
+                rh[min] = temp;
+            }
+        }
     }
 }

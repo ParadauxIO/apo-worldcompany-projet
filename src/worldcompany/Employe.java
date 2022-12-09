@@ -1,26 +1,29 @@
 package worldcompany;
 
+import java.util.Comparator;
+
 public abstract class Employe implements Comparable<Employe>, Presentation {
 
     private int codeEmploye;
     private final String nom;
     private final String prenom;
-    private int anneEmbauche;
+    private int anneeEmbauche;
 
     public Employe(String nom, String prenom, int anneeEmbauche) {
         this.nom = nom;
         this.prenom = prenom;
-        this.anneEmbauche = anneeEmbauche;
+        this.anneeEmbauche = anneeEmbauche;
     }
 
     @Override
     public String presentation() {
-        return null;
+        return String.format("[%d] Bonjour, je m'appelle %s %s et je gagne %.2f euros. Je suis rôle depuis %d.", codeEmploye, prenom, nom, getSalaire() , anneeEmbauche);
     }
 
     @Override
     public int compareTo(Employe o) {
-        return 0;
+        // Renvoie 1 si embauché avant, -1 si embauché après, 0 si égal
+        return Comparator.comparingInt(Employe::getAnneeEmbauche).compare(this, o);
     }
 
     public abstract double getSalaire();
@@ -29,11 +32,11 @@ public abstract class Employe implements Comparable<Employe>, Presentation {
         this.codeEmploye = codeEmploye;
     }
 
-    protected int getAneeEmbauche() {
-        return anneEmbauche;
+    protected int getAnneeEmbauche() {
+        return anneeEmbauche;
     }
 
     private void setAnneeEmbauche(int anneeEmbauche) {
-        this.anneEmbauche = anneeEmbauche;
+        this.anneeEmbauche = anneeEmbauche;
     }
 }
