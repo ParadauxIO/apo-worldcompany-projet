@@ -10,16 +10,19 @@ public class Personnel {
 
     public void presentations() {
         // À décommenté lorsque la classe Employe est terminer, pour tester
-    /*
 		for (Employe e: rh) {
 			System.out.println(e.presentation());
 		}
-		*/
     }
 
     public double salaireMoyen() {
-        return 0;
-        // TODO Complétez la méthode salaire moyen.
+        double salaireTotal = 0;
+
+        for (Employe e : rh) {
+            salaireTotal += e.getSalaire();
+        }
+
+        return salaireTotal / rh.length;
     }
 
     public void trierEmployes() {

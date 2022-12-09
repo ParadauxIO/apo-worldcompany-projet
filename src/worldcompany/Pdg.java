@@ -2,7 +2,7 @@ package worldcompany;
 
 public class Pdg implements Presentation {
 
-    private String deisgnation;
+    private final String deisgnation;
 
     public Pdg(String designation) {
         this.deisgnation = designation;
