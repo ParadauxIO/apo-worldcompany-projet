@@ -12,12 +12,13 @@ public class Manutentionnaire extends Employe {
     public Manutentionnaire(String nom, String prenom, int anneeEmbauche, double heures) {
         super(nom, prenom, anneeEmbauche);
         this.heures = heures;
+        super.setCodeEmploye(PREFIX_MANUTENTIONNAIRE + nbManutentionnaires);
         nbManutentionnaires++;
     }
 
     @Override
     public String presentation() {
-        return super.presentation();
+        return super.presentation().replace("[rôle]", "manutentionnaire");
     }
 
     @Override

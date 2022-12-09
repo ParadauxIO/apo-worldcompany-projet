@@ -10,11 +10,13 @@ public class Vendeur extends Commercial {
 
     public Vendeur(String nom, String prenom, int anneeEmbauche, double chiffreAffaire) {
         super(nom, prenom, anneeEmbauche, chiffreAffaire);
+        super.setCodeEmploye(PREFIX_VENDEUR + nbVendeur);
+        nbVendeur++;
     }
 
     @Override
     public String presentation() {
-        return super.presentation();
+        return super.presentation().replace("[rôle]", "vendeur");
     }
 
     @Override

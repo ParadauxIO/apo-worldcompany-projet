@@ -17,7 +17,7 @@ public abstract class Employe implements Comparable<Employe>, Presentation {
 
     @Override
     public String presentation() {
-        return String.format("[%d] Bonjour, je m'appelle %s %s et je gagne %.2f euros. Je suis rôle depuis %d.", codeEmploye, prenom, nom, getSalaire() , anneeEmbauche);
+        return String.format("[%d] Bonjour, je m'appelle %s %s et je gagne %.2f euros. Je suis [rôle] depuis %d.", codeEmploye, prenom, nom, getSalaire() , anneeEmbauche);
     }
 
     @Override

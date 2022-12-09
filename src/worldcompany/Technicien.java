@@ -11,12 +11,13 @@ public class Technicien extends Employe {
     public Technicien(String nom, String prenom, int anneeEmbauche, int unites) {
         super(nom, prenom, anneeEmbauche);
         this.unites = unites;
+        super.setCodeEmploye(PREFIX_TECHNICIEN + nbTechniciens);
         nbTechniciens++;
     }
 
     @Override
     public String presentation() {
-        return super.presentation();
+        return super.presentation().replace("[rôle]", "technicien");
     }
 
     @Override

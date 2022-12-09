@@ -10,12 +10,13 @@ public class Representant extends Commercial {
 
     public Representant(String nom, String prenom, int anneeEmbauche, double chiffreAffaire) {
         super(nom, prenom, anneeEmbauche, chiffreAffaire);
+        super.setCodeEmploye(PREFIX_REPRESENTANT + nbRepresentant);
         nbRepresentant++;
     }
 
     @Override
     public String presentation() {
-        return super.presentation();
+        return super.presentation().replace("[rôle]", "représentant");
     }
 
     @Override
